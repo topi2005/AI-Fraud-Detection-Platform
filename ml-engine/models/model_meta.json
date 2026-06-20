@@ -1,11 +1,11 @@
 {
-  "model_version": "90ab21bd",
+  "model_version": "d826387b",
   "threshold": 0.35,
-  "roc_auc": 1.0,
-  "avg_precision": 1.0,
-  "f1": 1.0,
-  "precision": 1.0,
-  "recall": 1.0,
+  "roc_auc": 0.8196,
+  "avg_precision": 0.6626,
+  "f1": 0.598,
+  "precision": 0.5658,
+  "recall": 0.6341,
   "feature_names": [
     "amount",
     "tx_count_1h",
