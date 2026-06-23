@@ -94,12 +94,11 @@ async def alert_stats(
     cur.execute("""
         SELECT
             COUNT(*) FILTER (WHERE status = 'open')         AS open_count,
-            COUNT(*) FILTER (WHERE severity = 'critical')   AS critical_count,
-            COUNT(*) FILTER (WHERE severity = 'high')       AS high_count,
+            COUNT(*) FILTER (WHERE severity = 'critical' AND status = 'open')   AS critical_count,
+            COUNT(*) FILTER (WHERE severity = 'high' AND status = 'open')       AS high_count,
             COUNT(*) FILTER (WHERE status = 'false_positive') AS false_positives,
             AVG(fraud_score)                                AS avg_score
         FROM fraud_alerts
-        WHERE created_at >= NOW() - INTERVAL '24 hours'
     """)
     summary = cur.fetchone()
 
